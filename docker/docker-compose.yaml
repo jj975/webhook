@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadminCloud
+    environment:
+      PMA_HOST: $PMA_HOST
+      PMA_USER: $PMA_USER
+      PMA_PASSWORD: $PMA_PASSWORD
+      PMA_PORT: $PMA_PORT
+    ports:
+      - "81:80"
+    networks:
+      - PHP
+
+networks:
+  PHP:
+    driver: bridge
